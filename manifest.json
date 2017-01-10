@@ -3,9 +3,10 @@
 	
 	"browser_action": {
 		"default_icon"  : "logo/Icon-48.png",
-		"default_title" : "百度云大文件下载破解"
+		"default_title" : "百度云大文件下载破解",
+		"default_popup" : "popup.html"
 	},
-	"description": "百度云大文件下载破解",
+	"description": "百度云大文件下载破解，作者博客：http://blog.jarjar.cn/",
 	"icons": {
 		"128" : "logo/Icon-128.png",
 		"32"  : "logo/Icon-32.png",
@@ -28,5 +29,5 @@
 		"cookies", 
 		"tabs"
 	],
-	"version": "1.0.0"
+	"version": "1.0.1"
 }
