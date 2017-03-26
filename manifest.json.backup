@@ -24,6 +24,7 @@
 	"web_accessible_resources": ["logo/Icon-256.png"],
 	"name": "百度云大文件下载破解",
 	"short_name": "百度云大文件下载破解",
+    //"options_page": "options.html",
 	"permissions": [
 		"cookies", 
 		"tabs"
