@@ -1,11 +1,17 @@
+// get activation setting
+chrome.storage.local.get('isActivated', function({isActivated}) {
+  if (isActivated === undefined) {
+    // set default
+    isActivated = true;
+    chrome.storage.local.set({isActivated: true});
+  }
 
-"use strict";
-
-(function(){
-    console.log("Don't be evil!");
+  // inject
+  if (isActivated) {
     const actualCode = "Object.defineProperty(navigator,'platform',{get:function(){return '这里随便吧';}});";
     const s = document.createElement('script');
     s.textContent = actualCode;
     document.documentElement.appendChild(s);
-s.remove();
-})();
+    console.log('baidu-nolimit injected');
+  }
+});
