@@ -1,5 +1,28 @@
 $(function() {
 
+  // get activation setting
+  chrome.storage.local.get('isActivated', function({isActivated}) {
+    if (isActivated === undefined) {
+      // set default
+      isActivated = true;
+      chrome.storage.local.set({isActivated: true});
+    }
+    $("#opt-active").prop("checked", isActivated);
+  });
+
+  // toggle activation setting
+  $("#opt-active").click(function() {
+    // save setting to storage
+    chrome.storage.local.set({isActivated: $("#opt-active").prop("checked")}, function() {
+      // reload the current active page if it belongs to pan.baidu.com
+      chrome.tabs.query({active: true, currentWindow: true, url: "*://pan.baidu.com/*"}, function([tab]) {
+        if (tab) {
+          chrome.tabs.reload(tab.id)
+        }
+      });
+    });
+  });
+
 	$("#blog").click(function() {
 		openHelper('http://blog.jarjar.cn/');
 	});

@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	
+
 	"browser_action": {
 		"default_icon"  : "logo/Icon-48.png",
 		"default_title" : "百度云大文件下载破解",
@@ -25,8 +25,8 @@
 	"name": "百度云大文件下载破解",
 	"short_name": "百度云大文件下载破解",
 	"permissions": [
-		"cookies", 
+    "storage",
 		"tabs"
 	],
-	"version": "1.0.1"
+	"version": "1.1.1"
 }
