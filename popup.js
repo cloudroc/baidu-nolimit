@@ -14,8 +14,8 @@ $(function() {
   $("#opt-active").click(function() {
     // save setting to storage
     chrome.storage.local.set({isActivated: $("#opt-active").prop("checked")}, function() {
-      // reload the current active page if it belongs to pan.baidu.com
-      chrome.tabs.query({active: true, currentWindow: true, url: "*://pan.baidu.com/*"}, function([tab]) {
+      // reload the current active page if it belongs to pan.baidu.com or yun.baidu.com
+      chrome.tabs.query({active: true, currentWindow: true, url: "*://*.baidu.com/*"}, function([tab]) {
         if (tab) {
           chrome.tabs.reload(tab.id)
         }
