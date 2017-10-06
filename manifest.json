@@ -16,7 +16,7 @@
 	"content_scripts": [
 		{
 			"run_at": "document_start",
-			"matches" : ["*://pan.baidu.com/*"],
+			"matches" : ["*://pan.baidu.com/*","*://yun.baidu.com/*"],
 			"js"      : ["core.js"],
 			"all_frames" : true
 		}
